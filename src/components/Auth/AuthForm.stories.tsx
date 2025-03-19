@@ -15,7 +15,7 @@ const meta: Meta<typeof LoginForm> = {
         '80': allModes['80'],
         '80s-small': allModes['80s-small'],
       },
-      viewports: [320, 1200],
+      // viewports: [320, 1200],
     },
   },
 }
