@@ -163,7 +163,7 @@ export const HeaderComponent = ({
   saveItem = () => {},
 }: HeaderComponentProps) => (
   <HeaderContainer data-testid="header" sticky={sticky}>
-    <LogoContainer to="/" aria-label="go to home page">
+    <LogoContainer to="/" aria-label="go to home page" aria-hidden="true">
       <Logo />
     </LogoContainer>
     {!logoOnly && (
@@ -178,7 +178,12 @@ export const HeaderComponent = ({
               <Button clear>All restaurants</Button>
             </Link>
           </span>
-          <Button aria-label="food cart" icon="cart" onClick={toggleCartVisibility}>
+          <Button
+            aria-label="food cart"
+            icon="cart"
+            onClick={toggleCartVisibility}
+            aria-hidden="true"
+          >
             {totalPrice > 0 && (
               <>
                 <CartText type="span">Order</CartText>
@@ -194,6 +199,7 @@ export const HeaderComponent = ({
           cartItems={cartItems}
           totalPrice={totalPrice}
           onItemChange={saveItem}
+          aria-hidden="true"
         />
       </>
     )}

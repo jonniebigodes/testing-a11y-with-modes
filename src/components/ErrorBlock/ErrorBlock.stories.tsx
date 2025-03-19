@@ -3,14 +3,22 @@ import { fn } from '@storybook/test'
 
 import sushi from '../../assets/images/sushi.svg'
 import { AnimatedIllustration } from '../AnimatedIllustration'
+import { allModes } from '../../../.storybook/modes'
 
 import { ErrorBlock } from './ErrorBlock'
-
 const meta = {
   title: 'Components/ErrorBlock',
   component: ErrorBlock,
   parameters: {
     layout: 'fullscreen',
+    chromatic: {
+      modes: {
+        light: allModes.light,
+        dark: allModes.dark,
+        '80': allModes['80'],
+        '80s-small': allModes['80s-small'],
+      },
+    },
   },
   args: {
     /* 

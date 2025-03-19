@@ -1,17 +1,27 @@
 import type { Meta, StoryObj } from '@storybook/react'
 
+import { allModes } from '../../../.storybook/modes'
+
 import { Review } from './Review'
 
 const meta = {
   title: 'Components/Review',
   component: Review,
+  parameters: {
+    chromatic: {
+      modes: {
+        light: allModes.light,
+        dark: allModes.dark,
+        '80': allModes['80'],
+        '80s-small': allModes['80s-small'],
+      },
+    },
+  },
   argTypes: {
     rating: {
       control: {
         type: 'range',
         min: 0,
-        max: 5,
-        step: 0.1,
       },
     },
   },

@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react'
 import styled, { css } from 'styled-components'
 
 import { Body } from '../typography/Body'
+import { allModes } from '../../../.storybook/modes'
 
 import { Icon } from './Icon'
 
@@ -49,6 +50,16 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const AllIcons: StoryObj = {
+  parameters: {
+    chromatic: {
+      modes: {
+        light: allModes.light,
+        dark: allModes.dark,
+        '80': allModes['80'],
+        '80s-small': allModes['80s-small'],
+      },
+    },
+  },
   render: () => (
     <>
       <IconContainer>

@@ -5,6 +5,7 @@ import { fn } from '@storybook/test'
 import { cartItems } from '../../stub/cart-items'
 import { Button } from '../Button'
 import { Body } from '../typography'
+import { allModes } from '../../../.storybook/modes'
 
 import { ShoppingCartMenu } from './ShoppingCartMenu'
 
@@ -15,6 +16,14 @@ const meta = {
     // This makes it so that the modal is loaded inside of an iframe in docs mode.
     // If it's not rendered in an iframe, the modal is going to open on top of Storybook itself!
     docs: { inlineStories: false, iframeHeight: 600 },
+    chromatic: {
+      modes: {
+        light: allModes.light,
+        dark: allModes.dark,
+        '80': allModes['80'],
+        '80s-small': allModes['80s-small'],
+      },
+    },
   },
   args: {
     isOpen: true,
