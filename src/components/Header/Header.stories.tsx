@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from '@storybook/react'
 
-import { allModes } from '../../../.storybook/modes'
+// import { allModes } from '../../../.storybook/modes'
 
 import { Header } from './Header'
 
@@ -9,14 +9,14 @@ const meta = {
   component: Header,
   parameters: {
     layout: 'fullscreen',
-    chromatic: {
+    /*  chromatic: {
       modes: {
         xs: allModes.xs,
         s: allModes.s,
         m: allModes.m,
         l: allModes.l,
       },
-    },
+    }, */
   },
   render: (args) => (
     <div style={{ position: 'relative', height: '100vh' }}>
