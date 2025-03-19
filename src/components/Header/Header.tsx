@@ -1,6 +1,7 @@
 import styled, { css } from 'styled-components'
 import { Link, useNavigate } from 'react-router-dom'
 import useDarkMode from 'use-dark-mode'
+import React from 'react'
 
 import { useAppDispatch, useAppSelector } from '../../app-state'
 import {
@@ -101,13 +102,41 @@ export const CartTotal = styled(Body)(
 
 const ThemeToggle = () => {
   const darkMode = useDarkMode(false, { global: globalThis.window })
+  const [theme, setTheme] = React.useState('light')
+
+  const cycleTheme = () => {
+    if (theme === 'light') {
+      setTheme('dark')
+      darkMode.enable()
+    } else if (theme === 'dark') {
+      setTheme('80')
+      darkMode.disable()
+    } else {
+      setTheme('light')
+      darkMode.disable()
+    }
+  }
+
+  const getThemeIcon = () => {
+    switch (theme) {
+      case 'light':
+        return 'sun'
+      case 'dark':
+        return 'moon'
+      case '80':
+        return 'star'
+      default:
+        return 'sun'
+    }
+  }
+
   return (
     <Button
       round
       clear
-      aria-label={`turn on ${darkMode.value ? 'light' : 'dark'} mode`}
-      icon={darkMode.value ? 'moon' : 'sun'}
-      onClick={darkMode.toggle}
+      aria-label={`switch to ${theme === 'light' ? 'dark' : theme === 'dark' ? '80s' : 'light'} mode`}
+      icon={getThemeIcon()}
+      onClick={cycleTheme}
     />
   )
 }

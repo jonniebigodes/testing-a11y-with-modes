@@ -62,6 +62,7 @@ const preview: Preview = {
         items: [
           { value: 'light', icon: 'circlehollow', title: 'light' },
           { value: 'dark', icon: 'circle', title: 'dark' },
+          { value: '80', icon: 'sun', title: '80' },
         ],
       },
     },

@@ -12,7 +12,7 @@ import { initialize } from 'msw-storybook-addon'
 import { rootReducer } from '../src/app-state'
 import { breakpoints } from '../src/styles/breakpoints'
 import { GlobalStyle } from '../src/styles/GlobalStyle'
-import { darkTheme, lightTheme } from '../src/styles/theme'
+import { darkTheme, lightTheme, theme80s } from '../src/styles/theme'
 
 initialize({
   onUnhandledRequest: ({ url, method }) => {
@@ -50,7 +50,7 @@ const ThemeBlock = styled.div<{ left?: boolean; fullScreen?: boolean }>(
 )
 
 export const withTheme: Decorator = (StoryFn, { globals: { theme = 'light' } }) => {
-  const appTheme = theme === 'light' ? lightTheme : darkTheme
+  const appTheme = theme === 'light' ? lightTheme : theme === 'dark' ? darkTheme : theme80s
 
   return (
     <ThemeProvider theme={appTheme}>

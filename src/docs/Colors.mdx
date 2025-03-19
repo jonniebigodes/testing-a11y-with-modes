@@ -1,6 +1,6 @@
 import { Meta, ColorPalette, ColorItem } from '@storybook/blocks'
 import { TabsState } from '@storybook/components'
-import { lightTheme, darkTheme } from '../styles/theme'
+import { lightTheme, darkTheme, theme80s } from '../styles/theme'
 import { getColors } from './utils'
 
 <Meta title="Design System/Colors" />
@@ -18,6 +18,13 @@ import { getColors } from './utils'
   <div id="dark" title="Dark mode">
     <ColorPalette>
       {getColors(darkTheme).map(({ name, value }) => (
+        <ColorItem key={name} title={`theme.colors.${name}`} subtitle={name} colors={[value]} />
+      ))}
+    </ColorPalette>
+  </div>
+  <div id="80s" title="80's mode">
+    <ColorPalette>
+      {getColors(theme80s).map(({ name, value }) => (
         <ColorItem key={name} title={`theme.colors.${name}`} subtitle={name} colors={[value]} />
       ))}
     </ColorPalette>

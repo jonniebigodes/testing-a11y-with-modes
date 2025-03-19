@@ -2,7 +2,7 @@ import { DefaultTheme } from 'styled-components'
 
 declare module 'styled-components' {
   export interface DefaultTheme {
-    name: 'light' | 'dark'
+    name: 'light' | 'dark' | '80'
     fonts: {
       family: string
     }
@@ -58,6 +58,21 @@ const baseColors = {
     dark3: '#7C9BA0',
     dark4: '#6A8589',
     dark5: '#596f72',
+  },
+  neon: {
+    pink: '#FF1B8D',
+    purple: '#B836D9',
+    blue: '#00F3FF',
+    yellow: '#FFE900',
+    green: '#04FF69',
+    orange: '#FF8A00',
+  },
+  retro: {
+    darkPurple: '#2B0F54',
+    purple: '#AB1F65',
+    navy: '#000B3B',
+    black: '#010326',
+    gridBlue: '#31AFDE',
   },
 }
 
@@ -154,7 +169,7 @@ const color = {
   black: baseColors.black,
 }
 
-export const lightTheme: DefaultTheme = {
+const lightTheme: DefaultTheme = {
   borderRadius,
   boxShadow,
   color,
@@ -166,7 +181,7 @@ export const lightTheme: DefaultTheme = {
   typography,
 }
 
-export const darkTheme: DefaultTheme = {
+const darkTheme: DefaultTheme = {
   ...lightTheme,
   boxShadow: {
     ...boxShadow,
@@ -178,9 +193,9 @@ export const darkTheme: DefaultTheme = {
     badgeText: baseColors.grey.light1,
     cartButtonText: baseColors.grey.dark2,
     bannerBackground: baseColors.grey.dark5,
-    buttonClearHover: baseColors.grey.dark4, // recheck
+    buttonClearHover: baseColors.grey.dark4,
     buttonPrimary: baseColors.green.base,
-    buttonPrimaryHover: baseColors.green.dark1, // recheck
+    buttonPrimaryHover: baseColors.green.dark1,
     buttonSecondary: baseColors.green.base,
     buttonText: baseColors.otherBlack,
     cardBackground: baseColors.grey.dark5,
@@ -213,3 +228,57 @@ export const darkTheme: DefaultTheme = {
   },
   name: 'dark',
 }
+
+const theme80s: DefaultTheme = {
+  ...lightTheme,
+  name: '80',
+  boxShadow: {
+    ...boxShadow,
+    card: '0px 0px 20px rgba(255, 27, 141, 0.3)',
+    outerBorder: `0 0 0 2px ${baseColors.neon.pink}, 0 0 0 4px ${baseColors.neon.blue}`,
+  },
+  color: {
+    ...lightTheme.color,
+    accentText: baseColors.neon.pink,
+    badgeBackground: baseColors.retro.purple,
+    badgeText: baseColors.white,
+    cartButtonText: baseColors.neon.yellow,
+    bannerBackground: baseColors.neon.blue,
+    buttonClearHover: baseColors.retro.purple,
+    buttonPrimary: baseColors.neon.pink,
+    buttonPrimaryHover: baseColors.neon.purple,
+    buttonSecondary: baseColors.neon.green,
+    buttonSecondaryHover: baseColors.neon.blue,
+    buttonText: baseColors.white,
+    cardBackground: baseColors.retro.darkPurple,
+    checkoutTopBackground: baseColors.neon.blue,
+    checkoutBottomBackground: baseColors.retro.navy,
+    formBackground: baseColors.retro.darkPurple,
+    foodItemBackground: baseColors.retro.navy,
+    headerBackground: baseColors.retro.black,
+    restaurantDetailBackground: baseColors.retro.darkPurple,
+    headerBorder: baseColors.neon.pink,
+    inputBackground: baseColors.retro.navy,
+    inputIcon: baseColors.neon.pink,
+    inputHint: baseColors.neon.blue,
+    label: baseColors.neon.yellow,
+    labelActive: baseColors.neon.pink,
+    menuSectionBackground: baseColors.retro.navy,
+    stepsIndicatorInnerBar: baseColors.neon.pink,
+    stepsIndicatorOuterBar: baseColors.retro.purple,
+    orderSummaryBackground: baseColors.retro.darkPurple,
+    overlayBackground: baseColors.retro.darkPurple,
+    overlayHeader: baseColors.retro.purple,
+    primaryText: baseColors.white,
+    reviewText: baseColors.neon.blue,
+    screenBackground: baseColors.retro.black,
+    sidebarHeader: baseColors.retro.purple,
+    sidebarFooter: baseColors.retro.darkPurple,
+    skeletonBase: baseColors.retro.purple,
+    skeletonHighlight: baseColors.neon.pink,
+    topBannerBackground: baseColors.neon.blue,
+    newRestaurantTag: baseColors.neon.green,
+  },
+}
+
+export { lightTheme, darkTheme, theme80s }

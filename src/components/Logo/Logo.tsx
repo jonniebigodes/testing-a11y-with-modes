@@ -6,11 +6,13 @@ import { Heading } from '../typography'
 const colors = {
   light: ['#61D8DE', '#4CC8C0', '#36C1BF', '#36C1BF', '#22ACA7', '#22ACA7', '#B1DCE3'],
   dark: ['#E4F7BB', '#D2E29A', '#DAEAAE', '#DAEAAE', '#C6D88B', '#C6D88B', '#FFFFFF'],
+  '80': ['#FF1B8D', '#B836D9', '#00F3FF', '#00F3FF', '#FFE900', '#FFE900', '#04FF69'],
 }
 
 const shineColors = {
   light: '#9FF4F1',
   dark: '#EFFFBB',
+  '80': '#FF8A00',
 }
 
 const shine = (color: string) => keyframes`
