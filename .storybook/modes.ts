@@ -5,6 +5,13 @@ export const allModes = {
   dark: {
     theme: 'dark',
   },
+  '80': {
+    theme: '80',
+  },
+  '80s-small': {
+    theme: '80',
+    viewport: 'breakpointXS',
+  },
   xs: {
     viewport: 'breakpointXS',
   },
